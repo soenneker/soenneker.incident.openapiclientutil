@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net11.0</TargetFramework>
+        <IsAotCompatible>true</IsAotCompatible>
+        <Nullable>enable</Nullable>
+        <Platforms>AnyCPU</Platforms>
+        <NoWarn>$(NoWarn);1591</NoWarn>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Description>A thread-safe utility for obtaining Incident's OpenApiClient singleton.</Description>
+        <Version Condition="'$(BUILD_VERSION)' == ''">11.0.0</Version>
+        <Version Condition="'$(BUILD_VERSION)' != ''">$(BUILD_VERSION)</Version>
+        <AssemblyName>Soenneker.Incident.OpenApiClientUtil</AssemblyName>
+        <PackageId>Soenneker.Incident.OpenApiClientUtil</PackageId>
+        <PackageTags>incident openapiclientutil incidentio incidents oncall alerts openapi kiota client util singleton incidentopenapiclientutil csharp dotnet c# .net</PackageTags>
+        <Copyright>Copyright Â© 2026 Jake Soenneker</Copyright>
+        <Authors>Jake Soenneker</Authors>
+        <Company>https://soenneker.com</Company>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <IsPackable>true</IsPackable>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/soenneker/soenneker.incident.openapiclientutil</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/soenneker/soenneker.incident.openapiclientutil</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryBranch>main</RepositoryBranch>
+        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <LangVersion>latest</LangVersion>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageIcon>icon.png</PackageIcon>
+        <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+        <PackageReleaseNotes Condition="'$(PACKAGE_RELEASE_NOTES)' != ''">$(PACKAGE_RELEASE_NOTES)</PackageReleaseNotes>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+        <None Include="..\..\LICENSE" Pack="true" PackagePath="\" />
+        <None Include="..\..\icon.png" Pack="true" PackagePath="\" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Kiota.Http.HttpClientLibrary" Version="2.1.2" />
+        <PackageReference Include="Soenneker.Utils.AsyncSingleton" Version="11.0.886" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\soenneker.incident.httpclients\src\Soenneker.Incident.HttpClients\Soenneker.Incident.HttpClients.csproj" Condition="Exists('..\..\..\soenneker.incident.httpclients\src\Soenneker.Incident.HttpClients\Soenneker.Incident.HttpClients.csproj')" />
+        <PackageReference Include="Soenneker.Incident.HttpClients" Version="11.0.0" Condition="!Exists('..\..\..\soenneker.incident.httpclients\src\Soenneker.Incident.HttpClients\Soenneker.Incident.HttpClients.csproj')" />
+        <ProjectReference Include="..\..\..\soenneker.incident.openapiclient\src\Soenneker.Incident.OpenApiClient\Soenneker.Incident.OpenApiClient.csproj" Condition="Exists('..\..\..\soenneker.incident.openapiclient\src\Soenneker.Incident.OpenApiClient\Soenneker.Incident.OpenApiClient.csproj')" />
+        <PackageReference Include="Soenneker.Incident.OpenApiClient" Version="11.0.0" Condition="!Exists('..\..\..\soenneker.incident.openapiclient\src\Soenneker.Incident.OpenApiClient\Soenneker.Incident.OpenApiClient.csproj')" />
+    </ItemGroup>
+</Project>
