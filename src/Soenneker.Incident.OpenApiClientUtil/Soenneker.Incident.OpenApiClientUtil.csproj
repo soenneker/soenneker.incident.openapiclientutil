@@ -52,6 +52,6 @@
         <ProjectReference Include="..\..\..\soenneker.incident.httpclients\src\Soenneker.Incident.HttpClients\Soenneker.Incident.HttpClients.csproj" Condition="Exists('..\..\..\soenneker.incident.httpclients\src\Soenneker.Incident.HttpClients\Soenneker.Incident.HttpClients.csproj')" />
         <PackageReference Include="Soenneker.Incident.HttpClients" Version="11.0.0" Condition="!Exists('..\..\..\soenneker.incident.httpclients\src\Soenneker.Incident.HttpClients\Soenneker.Incident.HttpClients.csproj')" />
         <ProjectReference Include="..\..\..\soenneker.incident.openapiclient\src\Soenneker.Incident.OpenApiClient\Soenneker.Incident.OpenApiClient.csproj" Condition="Exists('..\..\..\soenneker.incident.openapiclient\src\Soenneker.Incident.OpenApiClient\Soenneker.Incident.OpenApiClient.csproj')" />
-        <PackageReference Include="Soenneker.Incident.OpenApiClient" Version="11.0.0" Condition="!Exists('..\..\..\soenneker.incident.openapiclient\src\Soenneker.Incident.OpenApiClient\Soenneker.Incident.OpenApiClient.csproj')" />
+        <PackageReference Include="Soenneker.Incident.OpenApiClient" Version="11.0.3" Condition="!Exists('..\..\..\soenneker.incident.openapiclient\src\Soenneker.Incident.OpenApiClient\Soenneker.Incident.OpenApiClient.csproj')" />
     </ItemGroup>
 </Project>
