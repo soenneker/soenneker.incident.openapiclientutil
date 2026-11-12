@@ -46,7 +46,7 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.Kiota.Http.HttpClientLibrary" Version="2.1.6" />
-        <PackageReference Include="Soenneker.Utils.AsyncSingleton" Version="11.0.889" />
+        <PackageReference Include="Soenneker.Utils.AsyncSingleton" Version="11.0.893" />
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\..\..\soenneker.incident.httpclients\src\Soenneker.Incident.HttpClients\Soenneker.Incident.HttpClients.csproj" Condition="Exists('..\..\..\soenneker.incident.httpclients\src\Soenneker.Incident.HttpClients\Soenneker.Incident.HttpClients.csproj')" />
